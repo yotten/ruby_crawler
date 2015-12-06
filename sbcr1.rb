@@ -10,7 +10,8 @@ def parse(page_source)
   end 
 end
 
-x = parse(open("samplepage.html", &:read))
+#x = parse(open("samplepage.html", &:read))
+x = parse(`wget -q -O- http://crawler.sbcr.jp/samplepage.html`)
 x[0, 2]
 # => [["http://www.sbcr.jp/topics/11719/",
 #      "最強の布陣で挑む！ GA文庫電子版【俺TUEEEEE】キャンペーン開催中",
